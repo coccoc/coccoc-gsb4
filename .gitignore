@@ -1,0 +1,7 @@
+.idea
+data
+extract
+src/main.yaml
+gsb4-deb/coccoc-gsb4*
+!gsb4-deb/coccoc-gsb4.cron.d
+_Deparsed_XSubs.pm
