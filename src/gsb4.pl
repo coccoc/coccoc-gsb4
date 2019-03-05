@@ -101,6 +101,15 @@ sub main {
     else {
         $LOGGER->info("Skip extraction since it's up-to-date");
     }
+
+    # report if extracted version is too old (1 days old)
+    $current_extracted_version = get_last_update_in_extract_dir($EXTRACT_DIR);
+    my $hours = (time() - $current_extracted_version) / 3600;
+    if ($hours > 24) {
+        $LOGGER->warn("The extracted data is too old ($hours hours)!");
+        die "The extracted data is too old ($hours hours)!";
+    }
+
     $LOGGER->info("Done");
     undef($LOCK);
 }
