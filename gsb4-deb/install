@@ -1,0 +1,7 @@
+../../src/gsb4.pl                   usr/bin/
+../../src/gsb4.sh                   usr/bin/
+../../src/Gsb4/Utils.pm             usr/share/perl5/Gsb4/
+../../src/Gsb4/Lockf.pm             usr/share/perl5/Gsb4/
+../../src/Gsb4/Lockf/Alarm.pm       usr/share/perl5/Gsb4/Lockf/
+
+../../src/main.yaml /etc/coccoc-gsb4

@@ -1,11 +1,9 @@
 #!/bin/bash
 
 # make logs dir if not exists
-LOGDIR=/var/log/coccoc-gsb4
 mkdir -p $LOGDIR
-MAIL_TO="quannk@coccoc.com"
 
-export APPLICATION_START_TIME=`eval date +%Y-%m-%d_%H.%M.%S`
+APPLICATION_START_TIME=`eval date +%Y-%m-%d_%H.%M.%S`
 
 # remove 30 days old logs
 find $LOGDIR -type f -name 'gsb_*log' -mtime +30 -exec rm {} \;

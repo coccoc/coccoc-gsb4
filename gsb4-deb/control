@@ -1,0 +1,15 @@
+Source: coccoc-gsb4
+Section: unknown
+Priority: optional
+Maintainer: quannk <quannk@coccoc.com>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: https://anonscm.debian.org/git/collab-maint/coccoc-gsb4.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/coccoc-gsb4.git
+
+Package: coccoc-gsb4
+Architecture: all
+# libnet-google-safebrowsing4-perl; libnet-google-safebrowsing4-perl cannot be installed with apt (for now), so we must build their .deb ourselves
+Depends: liblog-log4perl-perl, libnet-google-safebrowsing4-perl, libjson-streaming-writer-perl, libyaml-perl, libparams-validate-perl
+Description: implementation for ticket 581587
