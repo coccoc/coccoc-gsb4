@@ -59,8 +59,13 @@ sub main {
     my $EXTRACT_DIR = $opts->{output};
 
     my $current_extracted_version = get_last_update_in_extract_dir($EXTRACT_DIR);
-    if ($current_extracted_version < $current_data_version->{last_update} && $current_data_version->{errors} == 0) {
-        $LOGGER->info("Start extraction since there is newer version");
+    if (($current_extracted_version == 0) || ($current_extracted_version < $current_data_version->{last_update} && $current_data_version->{errors} == 0)) {
+        if ($current_extracted_version == 0) {
+            $LOGGER->info("Start extraction since extracted data is empty");
+        }
+        else {
+            $LOGGER->info("Start extraction since there is newer version");
+        }
         # create temp folder for extraction
         my $TEMP_DIR = make_tmp_dir();
 
